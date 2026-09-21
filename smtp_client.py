@@ -58,9 +58,8 @@ if recv4[:3] != '354':
 
 # Send message data.
 subject = 'Subject: SMTP Lab\r\n'
-body = 'This is a test email sent using my own SMTP client.\r\n'
-
-clientSocket.send((subject + body).encode())
+clientSocket.send(subject.encode())
+clientSocket.send(msg.encode())
 
 # Message ends with a single period.
 clientSocket.send(endmsg.encode())
